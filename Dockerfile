@@ -1,9 +1,14 @@
 FROM debian:jessie
 
-MAINTAINER Oluwaseun Obajobi "oluwaseun.obajobi@namshi.com"
+# smtp-tor
+MAINTAINER Florian Fuessl "flo@degnet.de"
+
+# forked from docker-smtp
+# MAINTAINER Oluwaseun Obajobi "oluwaseun.obajobi@namshi.com"
 
 RUN apt-get update && \
-    apt-get install -y exim4-daemon-light && \
+    DEBIAN_FRONTEND=noninteractive \
+       apt-get install --no-install-recommends -y exim4-daemon-light tor iptables && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     find /var/log -type f | while read f; do echo -ne '' > $f; done;
