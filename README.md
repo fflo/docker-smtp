@@ -4,12 +4,12 @@
 This is a SMTP docker container for sending emails through the TOR network. You can relay outbound emails using gmail and (maybe) amazon SES.
 
 ## NOTE!!! ##
-You need to run this container with the capability NET_ADMIN, like i.e.
-`docker run --cap-add=NET_ADMIN --env-file ./env --name smtp-tor fflo/smtp-tor`
+You need to run this container with the capability NET_ADMIN:
+e.g. `docker run --cap-add=NET_ADMIN --env-file ./env --name smtp-tor fflo/smtp-tor`
 
 ## Environment variables
 
-The container accepts `RELAY_NETWORKS` environment variable which *MUST* start with `:` e.g `:192.168.0.0/24` or `:192.168.0.0/24:10.0.0.0/16`.
+The container accepts `RELAY_NETWORKS` environment variable which *MUST* start with `:` e.g. `:192.168.0.0/24` or `:192.168.0.0/24:10.0.0.0/16`.
 
 The container accepts `KEY_PATH` and `CERTIFICATE_PATH` environment variable that if provided will enable TLS support. The paths must be to the key and certificate file on a exposed volume. The keys will be copied into the container location.
 
