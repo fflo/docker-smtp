@@ -1,7 +1,11 @@
-# Docker-SMTP
+# smtp-tor docker container
 [![](https://images.microbadger.com/badges/image/namshi/smtp.svg)](https://microbadger.com/images/namshi/smtp)
 
-This is a SMTP docker container for sending emails. You can also relay emails to gmail and amazon SES.
+This is a SMTP docker container for sending emails through the TOR network. You can relay outbound emails using gmail and (maybe) amazon SES.
+
+## NOTE!!! ##
+You need to run this container with the capability NET_ADMIN, like i.e.
+`docker run --cap-add=NET_ADMIN --env-file ./env --name smtp-tor fflo/smtp-tor`
 
 ## Environment variables
 
