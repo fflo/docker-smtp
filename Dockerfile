@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch-slim
 
 # smtp-tor
 MAINTAINER Florian Fuessl "flo@degnet.de"
@@ -8,7 +8,7 @@ MAINTAINER Florian Fuessl "flo@degnet.de"
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
-       apt-get install --no-install-recommends -y exim4-daemon-light tor iptables && \
+       apt-get install --no-install-recommends -y exim4-daemon-light tor iptables iproute2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     find /var/log -type f | while read f; do echo -ne '' > $f; done;
