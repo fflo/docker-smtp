@@ -1,7 +1,7 @@
-# smtp-tor docker container
+# Docker-SMTP through Tor onion service
 [![](https://images.microbadger.com/badges/image/namshi/smtp.svg)](https://microbadger.com/images/namshi/smtp)
 
-This is a SMTP docker container for sending emails through the TOR network. You can relay outbound emails using gmail and (maybe) amazon SES.
+This is a SMTP docker container for sending emails through the TOR onion network. You can relay outbound emails using Tor onion and/or any other smtp based email service, like i.e. secmail, gmail, et al.
 
 ## NOTE!!! ##
 You need to run this container with the capability NET_ADMIN:
